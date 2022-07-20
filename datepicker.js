@@ -301,6 +301,7 @@ class DatePicker extends Component {
       confirmBtnTestID,
       allowFontScaling,
       locale,
+      is24Hour
     } = this.props;
 
     const dateInputStyle = [
@@ -365,6 +366,7 @@ class DatePicker extends Component {
                           }
                           style={[Style.datePicker, customStyles.datePicker]}
                           locale={locale}
+                          is24Hour={is24Hour}
                           display="spinner"
                         />
                       </View>
@@ -420,6 +422,8 @@ class DatePicker extends Component {
               value={this.state.date}
               onChange={this.onTimePicked}
               display="clock"
+              locale={locale}
+              is24Hour={is24Hour}
             />
           ) : null}
           {(mode === "date" && this.state.isPicker) ||
@@ -433,6 +437,8 @@ class DatePicker extends Component {
               value={this.state.date}
               onChange={this.onDatePicked}
               display="calendar"
+              locale={locale}
+              is24Hour={is24Hour}
             />
           ) : null}
         </View>
